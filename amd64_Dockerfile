@@ -1,0 +1,14 @@
+FROM ubuntu:latest
+
+RUN apt-get update \
+    && apt-get install --no-install-recommends --no-install-suggests -y \
+        nano python3 python3-pip build-essential \
+        libbluetooth-dev libglib2.0-dev libboost-python-dev \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install bluepy influxdb
+
+WORKDIR /xiaomi/
+COPY ./xiaomi_mija_reader.py ./xiaomi_mija_reader.py
+
+CMD [ "xiaomi_mija_reader.py" ]
+ENTRYPOINT [ "python3" ]

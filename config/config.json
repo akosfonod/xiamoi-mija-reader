@@ -1,0 +1,19 @@
+{
+    "devices": {
+        "room1": {
+            "mac_address": "00:11:22:33:44:55"
+        },
+        "room2": {
+            "mac_address": "aa:bb:cc:dd:ee:ff"
+        }
+    },
+    "database":{
+        "name":"temperatures",
+        "port": 8086,
+        "host": "localhost"
+    },
+    "log_file": "/xiaomi/config/test.log",
+    "log_file_method":"overwrite",
+    "log_level": "INFO",
+    "update_time": 5
+}
